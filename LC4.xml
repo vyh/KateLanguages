@@ -80,5 +80,6 @@
         <comment name="singleLine" start=";" />
     </comments>
     <keywords casesensitive="0" />
+    <folding indentationsensitive="1" />
 </general>
 </language>
