@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE language SYSTEM "language.dtd">
-<language name="LC4" kateversion="3.8.5" section="Sources" extensions="*.asm" >
+<language name="LC4" kateversion="3.8.5" section="Sources" extensions="*.asm" priority="1" >
 <highlighting>
     <list name="pseudo">
         <item> RET </item>
