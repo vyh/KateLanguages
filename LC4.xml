@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language name="LC4" kateversion="3.8.5" section="Sources" extensions="*.asm" >
+<highlighting>
+    <list name="pseudo">
+        <item> RET </item>
+        <item> LEA </item>
+        <item> LC </item>
+    </list>
+    <list name="instructions">
+        <item> NOP </item>
+        <item> BRn </item>
+        <item> BRnz </item>
+        <item> BRnp </item>
+        <item> BRz </item>
+        <item> BRzp </item>
+        <item> BRp </item>
+        <item> BRnzp </item>
+        <item> ADD </item>
+        <item> MUL </item>
+        <item> SUB </item>
+        <item> DIV </item>
+        <item> CMP </item>
+        <item> CMPU </item>
+        <item> CMPI </item>
+        <item> CMPIU </item>
+        <item> JSR </item>
+        <item> JSRR </item>
+        <item> AND </item>
+        <item> NOT </item>
+        <item> OR </item>
+        <item> XOR </item>
+        <item> LDR </item>
+        <item> STR </item>
+        <item> RTI </item>
+        <item> CONST </item>
+        <item> SLL </item>
+        <item> SRA </item>
+        <item> SRL </item>
+        <item> MOD </item>
+        <item> JMPR </item>
+        <item> JMP </item>
+        <item> HICONST </item>
+        <item> TRAP </item>
+    </list>
+    <list name="registers">
+        <item> R0 </item>
+        <item> R1 </item>
+        <item> R2 </item>
+        <item> R3 </item>
+        <item> R4 </item>
+        <item> R5 </item>
+        <item> R6 </item>
+        <item> R7 </item>
+    </list>
+    
+    <contexts>
+        <context attribute="Normal Text" lineEndContext="#pop" name="Normal Text" >
+            <RegExpr attribute="Comment" String=";.*$" />
+            <keyword attribute="Registers" context="#stay" String="registers" />
+            <RegExpr attribute="Assembler" insensitive="1" String="\.(OS|DATA|CODE|ADDR|FALIGN|FILL|BLKW|CONST|UCONST)" />
+            <keyword attribute="Assembler" context="#stay" String="pseudo" />
+            <keyword attribute="Instruction" context="#stay" String="instructions" />
+            <RegExpr attribute="Number" String="[^a-wy-zA-Z_](0?x[0-9a-fA-F]+|#?-?\d+)" />
+        </context>
+        <context attribute="Comment" lineEndContext="#pop" name="Comment" />
+    </contexts>
+    <itemDatas>
+        <itemData name="Normal Text" defStyleNum="dsNormal" />
+        <itemData name="Instruction" defStyleNum="dsKeyword" />
+        <itemData name="Assembler" defStyleNum="dsFunction" />
+        <itemData name="Registers" defStyleNum="dsDataType" />
+        <itemData name="Comment" defStyleNum="dsComment" />
+        <itemData name="Number" defStyleNum="dsDecVal" />
+    </itemDatas>
+    
+</highlighting>
+<general>
+    <comments>
+        <comment name="singleLine" start=";" />
+    </comments>
+    <keywords casesensitive="0" />
+</general>
+</language>
