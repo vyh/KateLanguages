@@ -61,7 +61,7 @@
             <RegExpr attribute="Assembler" insensitive="1" String="\.(OS|DATA|CODE|ADDR|FALIGN|FILL|BLKW|CONST|UCONST)" />
             <keyword attribute="Assembler" context="#stay" String="pseudo" />
             <keyword attribute="Instruction" context="#stay" String="instructions" />
-            <RegExpr attribute="Number" String="[^a-wy-zA-Z_](0?x[0-9a-fA-F]+|#?-?\d+)" />
+            <RegExpr attribute="Number" String="(\b0?x[0-9a-fA-F]+|#?-?\b\d+)\b" />
         </context>
         <context attribute="Comment" lineEndContext="#pop" name="Comment" />
     </contexts>
